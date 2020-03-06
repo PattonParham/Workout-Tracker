@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const Workouts = require("../models/workouts.js");
 
-router.post("/api/workouts", ({body}, res) =>{
+router.post("/api/exercise", ({body}, res) =>{
     Workouts.create(body)
     .then(dbWorkouts => {
         res.json(dbWorkouts);
@@ -11,7 +11,7 @@ router.post("/api/workouts", ({body}, res) =>{
     });
 });
 
-router.get("/api/workouts/exercises", ({body}, res) =>{
+router.post("/api/workouts/exercises", ({body}, res) =>{
     Workouts.insertMany(body)
     .then(dbWorkouts => {
         res.json(dbWorkouts);
