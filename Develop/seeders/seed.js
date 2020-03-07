@@ -1,5 +1,6 @@
 let mongoose = require("mongoose");
 let db = require("../models");
+//how can you not find the fucking models when I'm fucking asking right here
 
 mongoose.connect("mongodb://localhost/workout", {
   useNewUrlParser: true,
@@ -121,18 +122,8 @@ let workoutSeed = [
         sets: 4
       }
     ]
-  },
-  {
-    day: new Date().setDate(new Date().getDate()-1),
-    exercises: [
-      {
-        type: "resistance",
-        name: "Bench",
-        duration: 30,
-        distance: 2
-      }
-    ]
   }
+
 ];
 
 db.Workout.deleteMany({})
